@@ -29,5 +29,5 @@ close CONF;
 die "invalid odps config file\n" unless (defined($access_id) and defined($access_key) and defined($endpoint));
 $endpoint =~ s/\/+$//; # remove trailing slash
 
-# print "/usr/bin/http -v --auth-type=odps --auth='$access_id:$access_key' GET $endpoint/$uri\n";
-exec("/usr/bin/http -v --auth-type=odps --auth='$access_id:$access_key' GET $endpoint/$uri");
+# print "http -v --auth-type=odps --auth='$access_id:$access_key' GET $endpoint/$uri\n";
+exec("http -v --auth-type=odps --auth='$access_id:$access_key' GET $endpoint/$uri");
